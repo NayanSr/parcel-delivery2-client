@@ -55,7 +55,7 @@ const Login = () => {
                 type="email"
                 name="email"
                 placeholder="Enter your email"
-                className="input input-bordered w-full"
+                className="input input-bordered"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -70,7 +70,7 @@ const Login = () => {
                 type="password"
                 name="password"
                 placeholder="Enter your password"
-                className="input input-bordered w-full"
+                className="input input-bordered"
                 value={formData.password}
                 onChange={handleChange}
                 required

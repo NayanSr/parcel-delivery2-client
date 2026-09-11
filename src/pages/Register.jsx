@@ -54,8 +54,8 @@ const Register = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Enter your name"
-                className="input input-bordered w-full"
+                placeholder="Your full name"
+                className="input input-bordered"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -70,7 +70,7 @@ const Register = () => {
                 type="email"
                 name="email"
                 placeholder="Enter your email"
-                className="input input-bordered w-full"
+                className="input input-bordered"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -85,7 +85,7 @@ const Register = () => {
                 type="text"
                 name="phone"
                 placeholder="01XXXXXXXXX"
-                className="input input-bordered w-full"
+                className="input input-bordered"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -99,7 +99,7 @@ const Register = () => {
                 type="password"
                 name="password"
                 placeholder="Minimum 6 characters"
-                className="input input-bordered w-full"
+                className="input input-bordered"
                 value={formData.password}
                 onChange={handleChange}
                 required
@@ -113,7 +113,7 @@ const Register = () => {
               </label>
               <select
                 name="role"
-                className="select select-bordered w-full"
+                className="select select-bordered"
                 value={formData.role}
                 onChange={handleChange}
               >

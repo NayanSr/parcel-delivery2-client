@@ -5,63 +5,46 @@ const Home = () => {
   const { user, logout } = useAuth();
 
   return (
-    <div className="min-h-screen bg-base-200">
-      <div className="navbar bg-base-100 shadow-md px-4">
-        <div className="flex-1">
-          <Link to="/" className="btn btn-ghost text-xl">
-            Parcel Delivery
-          </Link>
-        </div>
-        <div className="flex-none gap-2">
-          {user ? (
-            <>
-              <span className="text-sm">Hello, {user.name}</span>
-              <button onClick={logout} className="btn btn-sm btn-error">
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link to="/login" className="btn btn-sm btn-ghost">
-                Login
-              </Link>
-              <Link to="/register" className="btn btn-sm btn-primary">
-                Register
-              </Link>
-            </>
-          )}
-        </div>
-      </div>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-base-200 gap-6 px-4">
+      <h1 className="text-4xl font-bold text-primary">Parcel Delivery App</h1>
+      <p className="text-lg opacity-70">Simple & Fast Delivery System</p>
 
-      <div className="hero min-h-[80vh]">
-        <div className="hero-content text-center">
-          <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Parcel Delivery App</h1>
-            <p className="py-6">
-              Fast, reliable and secure parcel delivery service.
-            </p>
-            {!user && (
-              <Link to="/register" className="btn btn-primary">
-                Get Started
+      {user ? (
+        <div className="card bg-base-100 shadow-xl p-6 text-center">
+          <p className="mb-2">
+            Welcome, <strong>{user.name}</strong> ({user.role})
+          </p>
+          <div className="flex gap-3 justify-center mt-4">
+            {user.role === "admin" && (
+              <Link to="/admin/dashboard" className="btn btn-primary">
+                Go to Admin Dashboard
               </Link>
             )}
-            {user && (
-              <Link
-                to={
-                  user.role === "admin"
-                    ? "/admin/dashboard"
-                    : user.role === "rider"
-                    ? "/rider/dashboard"
-                    : "/user/dashboard"
-                }
-                className="btn btn-primary"
-              >
-                Go to Dashboard
+            {user.role === "rider" && (
+              <Link to="/rider/dashboard" className="btn btn-primary">
+                Go to Rider Dashboard
               </Link>
             )}
+            {user.role === "user" && (
+              <Link to="/user/dashboard" className="btn btn-primary">
+                Go to User Dashboard
+              </Link>
+            )}
+            <button onClick={logout} className="btn btn-outline">
+              Logout
+            </button>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="flex gap-4">
+          <Link to="/login" className="btn btn-primary">
+            Login
+          </Link>
+          <Link to="/register" className="btn btn-outline">
+            Register
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

@@ -8,25 +8,25 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 
-// Temporary Dashboard pages (Day 3-এ পূর্ণ করব)
+// সাময়িক Dashboard পেজ (Day 3 তে আলাদা Layout দিয়ে বানাব)
 const UserDashboard = () => (
   <div className="p-10 text-center">
     <h1 className="text-3xl font-bold">User Dashboard</h1>
-    <p className="mt-4">Welcome User! (Day 3-এ পূর্ণ করব)</p>
+    <p className="mt-2">Day 3 তে সুন্দর Layout আসবে</p>
   </div>
 );
 
 const RiderDashboard = () => (
   <div className="p-10 text-center">
     <h1 className="text-3xl font-bold">Rider Dashboard</h1>
-    <p className="mt-4">Welcome Rider! (Day 3-এ পূর্ণ করব)</p>
+    <p className="mt-2">Day 3 তে সুন্দর Layout আসবে</p>
   </div>
 );
 
 const AdminDashboard = () => (
   <div className="p-10 text-center">
     <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-    <p className="mt-4">Welcome Admin! (Day 3-এ পূর্ণ করব)</p>
+    <p className="mt-2">Day 3 তে সুন্দর Layout আসবে</p>
   </div>
 );
 
@@ -65,7 +65,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
