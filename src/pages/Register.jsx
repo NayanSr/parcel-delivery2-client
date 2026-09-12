@@ -44,87 +44,106 @@ const Register = () => {
     <div className="min-h-screen flex items-center justify-center bg-base-200 px-4">
       <div className="card w-full max-w-md bg-base-100 shadow-xl">
         <div className="card-body">
-          <h2 className="card-title text-2xl justify-center mb-4">Register</h2>
+          <h2 className="card-title text-2xl justify-center mb-4">
+            Register
+          </h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Full Name</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Your full name"
-                className="input input-bordered"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
+            <div className="form-control w-full">
+              <div className="flex items-center gap-4">
+                <label className="w-24 shrink-0">
+                  <span className="label-text">Full Name</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your full name"
+                  className="input input-bordered w-full"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
             </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                className="input input-bordered"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
+            <div className="form-control w-full">
+              <div className="flex items-center gap-4">
+                <label className="w-24 shrink-0">
+                  <span className="label-text">Email</span>
+                </label>
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  className="input input-bordered w-full"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
             </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Phone</span>
-              </label>
-              <input
-                type="text"
-                name="phone"
-                placeholder="01XXXXXXXXX"
-                className="input input-bordered"
-                value={formData.phone}
-                onChange={handleChange}
-              />
+            <div className="form-control w-full">
+              <div className="flex items-center gap-4">
+                <label className="w-24 shrink-0">
+                  <span className="label-text">Phone</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="01XXXXXXXXX"
+                  className="input input-bordered w-full"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Minimum 6 characters"
-                className="input input-bordered"
-                value={formData.password}
-                onChange={handleChange}
-                required
-                minLength={6}
-              />
+            <div className="form-control w-full">
+              <div className="flex items-center gap-4">
+                <label className="w-24 shrink-0">
+                  <span className="label-text">Password</span>
+                </label>
+
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Minimum 6 characters"
+                  className="input input-bordered w-full"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                  minLength={6}
+                />
+              </div>
             </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Register as</span>
-              </label>
-              <select
-                name="role"
-                className="select select-bordered"
-                value={formData.role}
-                onChange={handleChange}
-              >
-                <option value="user">User (Customer)</option>
-                <option value="rider">Rider</option>
-              </select>
+            <div className="form-control w-full">
+              <div className="flex items-center gap-4">
+                <label className="w-24 shrink-0">
+                  <span className="label-text">Register as</span>
+                </label>
+
+                <select
+                  name="role"
+                  className="select select-bordered w-full"
+                  value={formData.role}
+                  onChange={handleChange}
+                >
+                  <option value="user">User (Customer)</option>
+                  <option value="rider">Rider</option>
+                </select>
+              </div>
             </div>
 
             <button
               type="submit"
-              className={`btn btn-primary w-full ${loading ? "loading" : ""}`}
+              className={`btn btn-primary w-full ${
+                loading ? "loading" : ""
+              }`}
               disabled={loading}
             >
               {loading ? "Registering..." : "Register"}

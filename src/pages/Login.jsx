@@ -44,33 +44,37 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-base-200 px-4">
       <div className="card w-full max-w-md bg-base-100 shadow-xl">
         <div className="card-body">
-          <h2 className="card-title text-2xl justify-center mb-4">Login</h2>
+          <h2 className="card-title text-2xl justify-center mb-4">
+            Login
+          </h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="form-control">
+            <div className="form-control w-full">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
+
               <input
                 type="email"
                 name="email"
                 placeholder="Enter your email"
-                className="input input-bordered"
+                className="input input-bordered w-full"
                 value={formData.email}
                 onChange={handleChange}
                 required
               />
             </div>
 
-            <div className="form-control">
+            <div className="form-control w-full">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
+
               <input
                 type="password"
                 name="password"
                 placeholder="Enter your password"
-                className="input input-bordered"
+                className="input input-bordered w-full"
                 value={formData.password}
                 onChange={handleChange}
                 required
