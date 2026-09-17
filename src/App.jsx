@@ -19,6 +19,9 @@ import BookParcel from "./pages/user/BookParcel";
 import MyParcels from "./pages/user/MyParcels";
 import AllParcels from "./pages/admin/AllParcels";
 import AssignedParcels from "./pages/rider/AssignedParcels";
+import Profile from "./pages/Profile";
+import ManageRiders from "./pages/admin/ManageRiders";
+import AllUsers from "./pages/admin/AllUsers";
 
 function App() {
   return (
@@ -43,6 +46,7 @@ function App() {
             <Route path="dashboard" element={<UserDashboard />} />
             <Route path="book-parcel" element={<BookParcel />} />
             <Route path="my-parcels" element={<MyParcels />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
 
           {/* Rider Routes */}
@@ -56,6 +60,7 @@ function App() {
           >
             <Route path="dashboard" element={<RiderDashboard />} />
             <Route path="assigned-parcels" element={<AssignedParcels />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
 
           {/* Admin Routes */}
@@ -69,6 +74,9 @@ function App() {
           >
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="all-parcels" element={<AllParcels />} />
+            <Route path="riders" element={<ManageRiders />} />
+            <Route path="users" element={<AllUsers />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

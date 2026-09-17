@@ -14,6 +14,7 @@ const statusColor = {
 const AssignedParcels = () => {
   const [parcels, setParcels] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   const token = localStorage.getItem("token");
 
@@ -32,6 +33,12 @@ const AssignedParcels = () => {
       setLoading(false);
     }
   };
+
+  const filteredParcels = parcels.filter((parcel) =>
+  parcel.trackingId.toLowerCase().includes(search.toLowerCase()) ||
+  parcel.receiverName.toLowerCase().includes(search.toLowerCase()) ||
+  parcel.receiverPhone.includes(search)
+);
 
   useEffect(() => {
     fetchAssigned();
@@ -62,8 +69,17 @@ const AssignedParcels = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-6">Assigned Parcels</h1>
+      <div className="mb-6">
+  <input
+    type="text"
+    placeholder="Search by Tracking ID, Name or Phone..."
+    className="input input-bordered w-full max-w-md"
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+  />
+</div>
 
-      {parcels.length === 0 ? (
+      {filteredParcels.length === 0 ? (
         <div className="card bg-base-100 shadow">
           <div className="card-body text-center py-16">
             <p className="text-lg opacity-60">
@@ -73,7 +89,7 @@ const AssignedParcels = () => {
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {parcels.map((parcel) => (
+          {filteredParcels.map((parcel) => (
             <div key={parcel._id} className="card bg-base-100 shadow-xl">
               <div className="card-body">
                 <div className="flex justify-between items-start">

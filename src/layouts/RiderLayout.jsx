@@ -30,7 +30,7 @@ const RiderLayout = () => {
             </Link>
           </div>
           <div className="flex-none gap-2">
-            <span className="hidden sm:inline text-sm opacity-70">
+            <span className="hidden sm:inline text-sm opacity-70 mr-2">
               <span className="mr-2 font-semibold">{user?.name}</span>
                ({user?.role})
             </span>
