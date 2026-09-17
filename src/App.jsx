@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import BookParcel from "./pages/user/BookParcel";
 import MyParcels from "./pages/user/MyParcels";
 import AllParcels from "./pages/admin/AllParcels";
+import AssignedParcels from "./pages/rider/AssignedParcels";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
             }
           >
             <Route path="dashboard" element={<RiderDashboard />} />
+            <Route path="assigned-parcels" element={<AssignedParcels />} />
           </Route>
 
           {/* Admin Routes */}
