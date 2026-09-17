@@ -31,7 +31,8 @@ const RiderLayout = () => {
           </div>
           <div className="flex-none gap-2">
             <span className="hidden sm:inline text-sm opacity-70">
-              {user?.name} ({user?.role})
+              <span className="mr-2 font-semibold">{user?.name}</span>
+               ({user?.role})
             </span>
             <button onClick={handleLogout} className="btn btn-sm btn-outline btn-error">
               Logout

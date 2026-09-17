@@ -30,20 +30,22 @@ const UserLayout = () => {
             </Link>
           </div>
           <div className="flex-none gap-2">
-            <span className="hidden sm:inline text-sm opacity-70">
-              {user?.name} ({user?.role})
+            <span className="hidden sm:inline text-sm opacity-70 mr-2">
+              <span className="font-semibold">{user?.name}</span>
+               ({user?.role})
             </span>
             <button onClick={handleLogout} className="btn btn-sm btn-outline btn-error">
               Logout
             </button>
           </div>
         </div>
-
+        
         {/* Page Content */}
         <div className="p-4 md:p-6 bg-base-200 min-h-screen">
           <Outlet />
         </div>
       </div>
+
 
       {/* Sidebar */}
       <div className="drawer-side z-40">

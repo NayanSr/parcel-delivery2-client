@@ -15,6 +15,9 @@ import UserDashboard from "./pages/user/UserDashboard";
 import RiderDashboard from "./pages/rider/RiderDashboard";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import NotFound from "./pages/NotFound";
+import BookParcel from "./pages/user/BookParcel";
+import MyParcels from "./pages/user/MyParcels";
+import AllParcels from "./pages/admin/AllParcels";
 
 function App() {
   return (
@@ -37,7 +40,8 @@ function App() {
             }
           >
             <Route path="dashboard" element={<UserDashboard />} />
-            {/* Day 4 এ আরও route যোগ করব */}
+            <Route path="book-parcel" element={<BookParcel />} />
+            <Route path="my-parcels" element={<MyParcels />} />
           </Route>
 
           {/* Rider Routes */}
@@ -62,6 +66,7 @@ function App() {
             }
           >
             <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="all-parcels" element={<AllParcels />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -71,5 +76,3 @@ function App() {
 }
 
 export default App;
-
-
